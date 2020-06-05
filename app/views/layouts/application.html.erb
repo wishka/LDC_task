@@ -4,12 +4,30 @@
     <title>LDCTask</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <title><%= full_title(yield(:title)) %></title>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_link_tag 'custom', 'data-turbolinks-track': 'reload' %>
+  
+ </head>
 
   <body>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+
     <%= yield %>
+
+    </div>
+      <div class="container">
+    <%= render 'layouts/footer' %>
+      </div>
   </body>
 </html>

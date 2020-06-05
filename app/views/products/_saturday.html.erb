@@ -1,0 +1,53 @@
+<h3>Saturday menu!</h3>
+<form>
+  <div class="col-md-4 about-left">
+    <div class="tfood">
+      <p><b>Main</b></p>
+    <table><% @products.each do |i| %>
+      <tr>
+    <td><b><%= i.title %></b>
+    <%= image_tag i.path_to_image %></td>
+    <td><i><%= i.discribe %></i></td>
+    <td><b>Price: <%= i.price %></b>
+    <input type="radio" name="main" value=<%= i.id %>></td>
+    <% end %>
+    </tr>
+    </table>
+  </div>
+  </div>
+
+  <div class="col-md-4 about-left">
+    <div class="tfood">
+      <p><b>Topping</b></p>
+    <table><% @products2.each do |i| %>
+      <tr>
+    <td><b><%= i.title %></b>
+    <%= image_tag i.path_to_image %></td>
+    <td><i><%= i.discribe %></i></td>
+    <td><b>Price: <%= i.price %></b>
+    <input type="radio" name="topping" value=<%= i.id %>></td>
+    <% end %>
+    </tr>
+    </table>
+  </div>
+  </div>
+
+    <div class="col-md-4 about-left">
+      <div class="tfood">
+        <p><b>Drink</b></p>
+      <table><% @products3.each do |i| %>
+        <tr>
+      <td><b><%= i.title %></b>
+      <%= image_tag i.path_to_image %></td>
+      <td><i><%= i.discribe %></i></td>
+      <td><b>Price: <%= i.price %></b>
+      <input type="radio" name="drink" value=<%= i.id %>></td>
+      <% end %>
+      </tr>
+      </table>
+    </div>
+  </div>
+<div>
+  <button class="btn btn-md btn-success" onclick="add_to_cart()">Add to Cart</button>
+</div>
+</form>
