@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
+  # Тема письма может быть указана в файле I18n config/locales/en.yml
+  # следующим образом:
   #
   #   en.user_mailer.account_activation.subject
   #
@@ -10,8 +10,8 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Account activation"
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
+  # Тема письма может быть указана в файле I18n config/locales/en.yml
+  # следующим образом:
   #
   #   en.user_mailer.password_reset.subject
   #
