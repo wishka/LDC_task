@@ -10,5 +10,6 @@ ActionMailer::Base.smtp_settings = {
   :password       => ENV['SENDGRID_PASSWORD'],
   :domain         => 'ldc-shop-new.heroku.com',
   :authentication => :plain,
+  :enable_starttls_auto => true
 }
 ActionMailer::Base.delivery_method = :smtp

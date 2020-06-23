@@ -62,6 +62,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   host = 'ldc-shop-new.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
@@ -72,6 +73,7 @@ Rails.application.configure do
   :password         => ENV['SENDGRID_PASSWORD'],
   :domain           => 'ldc-shop-new.heroku.com',
   :authentication   => :plain,
+  :enable_starttls_auto => true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
