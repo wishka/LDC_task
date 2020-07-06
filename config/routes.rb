@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   get    'login'        => 'sessions#new'
   post   'login'        => 'sessions#create'
   delete 'logout'       => 'sessions#destroy'
-  get 'cart'            => 'cart#index'
+  post 'cart'           => 'cart#index'
+  post 'place_order'    => 'cart#order_placed'
   get 'products/show'
 
   resources :users

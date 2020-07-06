@@ -26,9 +26,13 @@
                   </li>
                 </ul>
               </li>
-              <li id="orders_button"><%= link_to "Cart(...)",   cart_path %>
-                <input id="orders_input" name="orders" type="hidden" />
-              </li>
+              <li>
+                <form action="/cart" method="post">
+                  <input name="orders" id="orders_input" type="hidden" />
+                  <input type="submit" class="btn btn-md btn-dark" id="orders_button" value="Cart(...)"/>
+
+                </form>
+            </li>
             <% else %>
             <li><%= link_to "Log in", login_path %></li>
             <% end %>
